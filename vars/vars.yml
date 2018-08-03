@@ -1,0 +1,14 @@
+---
+  key_name: ''
+  aws_key_name: ''
+  local_path: ""
+  ssh_key_material: ""
+  aws_region: ""
+  aws_access_key: ""
+  aws_secret_key: ""
+  aws_group: ""
+  aws_vpc_subnet_id: ""
+  aws_instance_name: ""
+  aws_ubuntu_ami: ""
+  aws_instance_type: ""
+  use_ansible_hosts_as_inventory: True

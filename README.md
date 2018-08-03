@@ -1,3 +1,4 @@
-# aws-deployment
+#Ansible role to deploy an AWS EC2 Ubuntu instance and setup nginx
+#To execute, please install ansible and run the play as follows
 
-Ansible role to deploy an AWS EC2 instance and setup nginx
+ansible-playbook playbook.yml

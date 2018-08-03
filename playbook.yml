@@ -1,0 +1,13 @@
+---
+- name: Gathering Facts
+  hosts: all
+  gather_facts: True
+  become: yes
+  become_method: sudo
+
+- name: Deploy Nginx node into EC2
+  hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+    - aws

@@ -1,0 +1,51 @@
+[webserver]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[git]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[redis]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[postgresql]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[hadoop_namenode]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[hadoop_seconday_namenode]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[hadoop_datanodes]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[hive]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[spark_master]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[spark_slaves]
+test-me ansible_ssh_host=10.44.22.33 ansible_ssh_port=22 ansible_ssh_user=test
+
+[git_client:children]
+git
+webserver
+
+[hdfscluster:children]
+hadoop_namenode
+hadoop_seconday_namenode
+hadoop_datanodes
+
+[hadoop_cluster:children]
+hadoop_namenode
+hadoop_seconday_namenode
+hadoop_datanodes
+hive
+spark_master
+spark_slaves
+
+[hadoop_clients:children]
+hadoop_cluster
+webserver
+

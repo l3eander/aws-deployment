@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create an Ubuntu EC2 instance in the cloud
+      ec2:
+         key_name: "{{ key_name }}"
+         aws_access_key: "{{ aws_access_key }}"
+         aws_secret_key: "{{ aws_secret_key }}"
+         group: "{{ aws_group }}"
+         instance_type: "{{ aws_instance_type }}"
+         image: "{{ aws_ubuntu_ami }}"
+         wait: true
+         region: "{{ aws_region }}"
+         count: 1
+         count_tag:
+            Name: "{{ aws_instance_name }}"
+         instance_tags:
+            Name: "{{ aws_instance_name }}"
+         vpc_subnet_id: "{{ aws_vpc_subnet_id }}"
+         assign_public_ip: yes
+      register: ec2_instance

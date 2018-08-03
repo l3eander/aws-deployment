@@ -1,0 +1,14 @@
+---
+- block:
+  - name: Create custom key pair
+    include: custom_key.yml
+
+  - name: Deploy EC2 instance
+    include: deploy_ubuntu.yml
+    
+  - name: Deploy EC2 instance
+    include: autowrite_inventory.yml
+    when: use_ansible_hosts_as_inventory
+
+  - name: Install Nginx
+    include: install_nginx.yml
