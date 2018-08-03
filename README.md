@@ -3,3 +3,6 @@
 #To execute, please install ansible and run the play as follows
 
 ansible-playbook playbook.yml
+
+Note: This is still in alpha!
+
